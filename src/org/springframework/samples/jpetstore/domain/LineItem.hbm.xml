@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2015-3-16 15:34:04 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="org.springframework.samples.jpetstore.domain.LineItem" table="LINEITEM">
+        <id name="itemId" type="java.lang.String">
+            <column name="ITEMID" />
+            <generator class="assigned" />
+        </id>
+        <property name="orderId" type="int">
+            <column name="ORDERID" />
+        </property>
+        <property name="lineNumber" type="int">
+            <column name="LINENUMBER" />
+        </property>
+        <property name="quantity" type="int">
+            <column name="QUANTITY" />
+        </property>
+        <property name="unitPrice" type="double">
+            <column name="UNITPRICE" />
+        </property>
+        <many-to-one name="item" class="org.springframework.samples.jpetstore.domain.Item" fetch="join">
+            <column name="ITEM" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
